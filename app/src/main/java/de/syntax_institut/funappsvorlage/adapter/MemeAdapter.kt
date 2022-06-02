@@ -6,18 +6,14 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.net.toUri
 import androidx.recyclerview.widget.RecyclerView
-import coil.load
-import coil.transform.RoundedCornersTransformation
 import de.syntax_institut.funappsvorlage.R
-import de.syntax_institut.funappsvorlage.data.datamodels.Meme
 
 /**
  * Diese Klasse organisiert mithilfe der ViewHolder Klasse das Recycling
  */
 class MemeAdapter(
-    private val dataset: List<Meme>
+    private val dataset: List<Any>
 ) : RecyclerView.Adapter<MemeAdapter.ItemViewHolder>() {
 
     /**
@@ -47,23 +43,20 @@ class MemeAdapter(
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
 
         // hole das memeItem aus dem dataset
-        val meme = dataset[position]
+        // TODO
 
         // baue eine URI aus der Bild URL
-        val imgUri = meme.url.toUri().buildUpon().scheme("https").build()
+        // TODO
 
         // lade das Bild mithilfe der URI in die ImageView und runde die Ecken ab
-        holder.ivMeme.load(imgUri) {
-            error(R.drawable.ic_broken_image)
-            transformations(RoundedCornersTransformation(10f))
-        }
+        // bTODO
+
         // Lade den Titel aus dem memeItem in das XML Element
-        holder.tvTitle.text = meme.name
+        // TODO
+
         // Setze einen Click Listener auf btnSave,
         // der den aktuellen Titel in das meme Objekt speichert
-        holder.btnSave.setOnClickListener {
-            meme.name = holder.tvTitle.text.toString()
-        }
+        // TODO
     }
 
     /**

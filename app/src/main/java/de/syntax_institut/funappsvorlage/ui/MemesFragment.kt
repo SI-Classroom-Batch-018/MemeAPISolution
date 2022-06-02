@@ -30,7 +30,7 @@ class MemesFragment : Fragment() {
     ): View? {
 
         // Hier wird der Informationsabruf gestartet
-        viewModel.loadData()
+        // TODO
 
         binding = FragmentMemesBinding.inflate(inflater, container, false)
         return binding.root
@@ -44,9 +44,7 @@ class MemesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // Bei einem Klick auf btnRefresh sollen die Informationen erneut abgerufen werden
-        binding.btnRefresh.setOnClickListener {
-            viewModel.loadData()
-        }
+        // TODO
 
         // Verbesserte Performance bei fixer Listengröße
         binding.rvMemes.setHasFixedSize(true)
@@ -58,10 +56,6 @@ class MemesFragment : Fragment() {
 
         // Die Variable memes wird beobachtet und bei einer Änderung wird der Adapter der
         // Recyclerview neu gesetzt.
-        viewModel.memes.observe(
-            viewLifecycleOwner
-        ) {
-            binding.rvMemes.adapter = MemeAdapter(it)
-        }
+        // TODO
     }
 }
