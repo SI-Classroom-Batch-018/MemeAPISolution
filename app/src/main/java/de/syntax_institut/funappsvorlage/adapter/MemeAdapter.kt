@@ -49,7 +49,7 @@ class MemeAdapter(
         // TODO
 
         // lade das Bild mithilfe der URI in die ImageView und runde die Ecken ab
-        // bTODO
+        // TODO
 
         // Lade den Titel aus dem memeItem in das XML Element
         // TODO
