@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="de.syntax_institut.funappsvorlage">
 
-    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Füge hier die Internet Berechtigung ein -->
 
     <application
         android:allowBackup="true"
