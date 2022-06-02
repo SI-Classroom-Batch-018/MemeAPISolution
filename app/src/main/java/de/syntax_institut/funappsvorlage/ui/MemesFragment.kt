@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.SnapHelper
-import de.syntax_institut.funappsvorlage.adapter.MemeAdapter
 import de.syntax_institut.funappsvorlage.databinding.FragmentMemesBinding
 
 class MemesFragment : Fragment() {
