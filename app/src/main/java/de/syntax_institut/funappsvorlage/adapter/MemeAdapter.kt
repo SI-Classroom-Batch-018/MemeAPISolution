@@ -9,7 +9,6 @@ import android.widget.TextView
 import androidx.core.net.toUri
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import coil.size.Scale
 import coil.transform.RoundedCornersTransformation
 import de.syntax_institut.funappsvorlage.R
 import de.syntax_institut.funappsvorlage.data.datamodels.Meme
