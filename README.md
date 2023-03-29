@@ -24,8 +24,8 @@ Die Dokumentation der API, die wir in dieser App benutzen werden, findest Du hie
   ```
   
   > Hinweis: 
-  > Falls Android Studio dir ein update der dependencies auf eine neuere Version vorschlägt, kannst du dieses gerne durchführen
-  
+ > Falls Android Studio dir ein update der dependencies auf eine neuere Version vorschlägt, kannst du dieses gerne durchführen, achte nur darauf, dass du dann evtl. auch die Kotlin Version updaten musst.
+ 
 * Erstelle eine `data class Meme` im package *datamodels*. Die Klasse erzeugt Meme-Objekte und wird verwendet um die Serverantwort zu übersetzen. In der Dokumentation siehst du, wie die ServerAntwort aussieht.
 
 * Baue den API-Service ein. Erstelle dazu ein Datei `MemeApiService` im package *remote*.
