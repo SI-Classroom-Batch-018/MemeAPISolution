@@ -35,7 +35,6 @@
 
         </androidx.appcompat.widget.Toolbar>
 
-
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/jokesFragment"
             android:name="de.syntax_institut.funappsvorlage.ui.MemesFragment"
