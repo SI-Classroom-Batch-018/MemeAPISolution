@@ -1,39 +1,35 @@
 package de.syntax_institut.funappsvorlage.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
+import androidx.core.net.toUri
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
+import coil.transform.RoundedCornersTransformation
 import de.syntax_institut.funappsvorlage.R
+import de.syntax_institut.funappsvorlage.data.datamodels.Meme
+import de.syntax_institut.funappsvorlage.databinding.ListItemMemeBinding
 
 /**
  * Diese Klasse organisiert mithilfe der ViewHolder Klasse das Recycling
  */
 class MemeAdapter(
-    private val dataset: List<Any>
+    private val dataset: List<Meme>
 ) : RecyclerView.Adapter<MemeAdapter.ItemViewHolder>() {
 
     /**
      * der ViewHolder umfasst die View uns stellt einen Listeneintrag dar
      */
-    inner class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val ivMeme: ImageView = itemView.findViewById(R.id.ivMeme)
-        val tvTitle: TextView = itemView.findViewById(R.id.tvTitle)
-        val btnSave: Button = itemView.findViewById(R.id.btnSave)
-    }
+    inner class ItemViewHolder(val binding: ListItemMemeBinding) :
+        RecyclerView.ViewHolder(binding.root)
 
     /**
      * hier werden neue ViewHolder erstellt
      */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
-
-        val itemLayout = LayoutInflater.from(parent.context)
-            .inflate(R.layout.list_item_meme, parent, false)
-
-        return ItemViewHolder(itemLayout)
+        val binding =
+            ListItemMemeBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return ItemViewHolder(binding)
     }
 
     /**
@@ -43,20 +39,27 @@ class MemeAdapter(
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
 
         // hole das memeItem aus dem dataset
-        // TODO
+        val meme = dataset[position]
 
         // baue eine URI aus der Bild URL
-        // TODO
+        val imgUri = meme.url.toUri().buildUpon().scheme("https").build()
 
         // lade das Bild mithilfe der URI in die ImageView und runde die Ecken ab
-        // TODO
+        holder.binding.ivMeme.load(imgUri) {
+            error(R.drawable.ic_broken_image)
+            transformations(RoundedCornersTransformation(10.0f))
+        }
 
+        // Meme-Titel. Wird gesetzt, wenn der Nutzer auf "speichern"-Button klickt.
+        holder.binding.tvMeme.text = ""
         // Lade den Titel aus dem memeItem in das XML Element
-        // TODO
-
+        holder.binding.etTitle.setText(meme.name)
         // Setze einen Click Listener auf btnSave,
         // der den aktuellen Titel in das meme Objekt speichert
-        // TODO
+        holder.binding.btnSave.setOnClickListener {
+            meme.name = holder.binding.etTitle.text.toString()
+            holder.binding.tvMeme.text = holder.binding.etTitle.text.toString()
+        }
     }
 
     /**
