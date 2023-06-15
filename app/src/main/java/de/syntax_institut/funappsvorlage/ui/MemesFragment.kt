@@ -28,7 +28,6 @@ class MemesFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        // Hier wird der Informationsabruf gestartet
         // TODO
 
         binding = FragmentMemesBinding.inflate(inflater, container, false)
@@ -42,7 +41,6 @@ class MemesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Bei einem Klick auf btnRefresh sollen die Informationen erneut abgerufen werden
         // TODO
 
         // Verbesserte Performance bei fixer Listengröße
@@ -53,8 +51,6 @@ class MemesFragment : Fragment() {
         val helper: SnapHelper = PagerSnapHelper()
         helper.attachToRecyclerView(binding.rvMemes)
 
-        // Die Variable memes wird beobachtet und bei einer Änderung wird der Adapter der
-        // Recyclerview neu gesetzt.
         // TODO
     }
 }
