@@ -1,4 +1,7 @@
 # Aufgaben
+
+Willkommen zurück bei JokeHub! Wir freuen uns, dass du uns bereits kennst und wir wieder zusammenarbeiten können. Diesmal haben wir eine neue spannende Aufgabe für dich: Wir benötigen eine weitere App!
+
 ## Meme App
 In dieser App holen wir mit einem API-Call eine Liste aus Meme Vorlagen. Diese Memes werden wir in der App anzeigen lassen, mit der Möglichkeit, eigene Untertitel zu schreiben und zu speichern. 
 <p align="center">
