@@ -7,5 +7,5 @@ const val TAG = "AppRepositoryTAG"
  * der App zur Verfügung
  */
 class AppRepository() {
-    // TODO
+
 }

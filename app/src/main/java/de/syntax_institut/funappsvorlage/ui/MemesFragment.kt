@@ -26,9 +26,8 @@ class MemesFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
-        // TODO
 
         binding = FragmentMemesBinding.inflate(inflater, container, false)
         return binding.root
@@ -41,16 +40,10 @@ class MemesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // TODO
 
-        // Verbesserte Performance bei fixer Listengröße
-        binding.rvMemes.setHasFixedSize(true)
 
-        // Der SnapHelper sorgt dafür,
-        // dass die RecyclerView immer auf das aktuelle List Item springt
+        // Der SnapHelper sorgt dafür, dass die RecyclerView immer auf das aktuelle List Item springt
         val helper: SnapHelper = PagerSnapHelper()
         helper.attachToRecyclerView(binding.rvMemes)
-
-        // TODO
     }
 }

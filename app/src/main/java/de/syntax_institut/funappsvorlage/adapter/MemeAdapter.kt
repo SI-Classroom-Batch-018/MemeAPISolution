@@ -9,7 +9,7 @@ import de.syntax_institut.funappsvorlage.databinding.ListItemMemeBinding
  * Diese Klasse organisiert mithilfe der ViewHolder Klasse das Recycling
  */
 class MemeAdapter(
-    private val dataset: List<Any> // TODO
+
 ) : RecyclerView.Adapter<MemeAdapter.ItemViewHolder>() {
 
     /**
@@ -32,14 +32,13 @@ class MemeAdapter(
      * die vom ViewHolder bereitgestellten Parameter erhalten die Information des Listeneintrags
      */
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
-        // TODO
-
+        TODO()
     }
 
     /**
      * damit der LayoutManager weiß, wie lang die Liste ist
      */
     override fun getItemCount(): Int {
-        return dataset.size
+        TODO()
     }
 }
