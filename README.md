@@ -30,7 +30,7 @@ hier: [MemeAPI](https://imgflip.com/api), schau sie dir einmal an.
   Die Datei sollte Folgendes enthalten:
     * Die URL der API: ` "https://api.imgflip.com/" `
     * Moshi & Retrofit
-    * Eine `suspend fun getMemes()`, die uns die Liste an `Meme` Objekten liefert. Die Funktion
+    * Eine `suspend fun getMemes()`, die als Rückgabewert ein Objekt passend zur Serverantwort hat. Die Funktion
       befindet sich in einem `Interface MemeApiService`. In der `@GET` Annotation wird die URL so
       spezifiziert:  
       ` "get_memes" `
