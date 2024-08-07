@@ -2,14 +2,17 @@ package de.syntax_institut.funappsvorlage.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.net.toUri
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
+import de.syntax_institut.funappsvorlage.data.model.Meme
 import de.syntax_institut.funappsvorlage.databinding.ListItemMemeBinding
 
 /**
  * Diese Klasse organisiert mithilfe der ViewHolder Klasse das Recycling
  */
 class MemeAdapter(
-
+    val dataset: List<Meme>
 ) : RecyclerView.Adapter<MemeAdapter.ItemViewHolder>() {
 
     /**
@@ -32,13 +35,22 @@ class MemeAdapter(
      * die vom ViewHolder bereitgestellten Parameter erhalten die Information des Listeneintrags
      */
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
-        TODO()
+        val meme = dataset[position]
+
+        holder.binding.tvMeme.text = meme.name
+        holder.binding.ivMeme.load(meme.url.toUri().buildUpon().scheme("https").build())
+
+        holder.binding.btnSave.setOnClickListener {
+            val newTitle = holder.binding.etTitle.text.toString()
+            holder.binding.tvMeme.text = newTitle
+            meme.name = newTitle
+        }
     }
 
     /**
      * damit der LayoutManager weiß, wie lang die Liste ist
      */
     override fun getItemCount(): Int {
-        TODO()
+        return dataset.size
     }
 }
